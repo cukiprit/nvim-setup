@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	"emmet.includeLanguages": {
 		"javascript": "javascriptreact",
 		"typescript": "typescriptreact"
@@ -7,3 +8,7 @@
 	"emmet.triggerExpansionOnTab": true,
 	"emmet.showAbbreviationSuggestions": true
 }
+=======
+  "snippets.ultisnips.pythonPrompt": false
+}
+>>>>>>> main

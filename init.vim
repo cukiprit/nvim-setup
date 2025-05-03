@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 " this will install vim-plug if not installed
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
@@ -71,3 +72,29 @@ nnoremap <leader>f :NvimTreeFocus<CR>
 " Commentary (Ctrl+/)
 nnoremap <C-_> :Commentary<CR>
 vnoremap <C-_> :Commentary<CR>
+=======
+
+	\ coc#refresh()
+inoremap <expr><S-Tab> pumvisible() ? "<C-p>" : "<C-h>"
+
+function! s:check_back_space() abort
+	let col = col('.') - 1
+	return !col || getline('.')[col - 1] =~# '\s'
+endfunction
+
+" Toggle (open/close) tree
+nnoremap <leader>e :NvimTreeToggle<CR>
+
+" Focus the tree (when already open)
+nnoremap <leader>f :NvimTreeFocus<CR>
+
+" Comment shortcut
+nnoremap <C-_> :Commentary<CR>
+vnoremap <C-_> :Commentary<CR>
+
+" Confirm completion
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "<C-g>u\<CR>"
+
+" Trigger completion
+inoremap <silent><expr> <C-space> coc#refresh()
+>>>>>>> main
