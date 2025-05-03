@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 " this will install vim-plug if not installed
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
@@ -97,4 +96,3 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "<C-g>u\<CR>"
 
 " Trigger completion
 inoremap <silent><expr> <C-space> coc#refresh()
->>>>>>> main
