@@ -1,14 +1,23 @@
+" vim: set ft=vim :
+
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+
 " this will install vim-plug if not installed
-if empty(glob('~/.config/nvim/autoload/plug.vim'))
-  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+if empty(glob('C:/Users/Dika/AppData/Local/nvim/autoload/plug.vim'))
+  silent !powershell -Command "iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim | ni $env:LOCALAPPDATA/nvim/autoload/plug.vim -Force"
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" Fix: 'plugged' was misspelled as 'plugged' in your original
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('C:/Users/Dika/AppData/Local/nvim/plugged')
 
+" === LSP and Completion ===
 Plug 'neoclide/coc.nvim', { 'do': 'npm install --no-package-lock' }
+Plug 'neoclide/coc-eslint'
+Plug 'fannheyward/coc-sql'
+
 let g:coc_global_extensions = [
   \ 'coc-tsserver',
   \ 'coc-html',
@@ -16,16 +25,25 @@ let g:coc_global_extensions = [
   \ 'coc-json',
   \ 'coc-prettier',
   \ 'coc-emmet',
-  \ 'coc-snippets'
+  \ 'coc-snippets',
+  \ 'coc-eslint',
+  \ 'coc-sql'
 \ ]
 
+" === UI and UX Plugins ===
 Plug 'jiangmiao/auto-pairs'
+Plug 'nvim-tree/nvim-tree.lua'
+Plug 'nvim-tree/nvim-web-devicons'
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'lewis6991/gitsigns.nvim'
+Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+
+" === Language & Snippet Support ===
 Plug 'yuezk/vim-js'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'dsznajder/vscode-es7-javascript-react-snippets'
-Plug 'nvim-tree/nvim-tree.lua'
-Plug 'nvim-tree/nvim-web-devicons'
 Plug 'tpope/vim-commentary'
 
 call plug#end()
@@ -71,15 +89,8 @@ nnoremap <leader>f :NvimTreeFocus<CR>
 " Commentary (Ctrl+/)
 nnoremap <C-_> :Commentary<CR>
 vnoremap <C-_> :Commentary<CR>
-=======
 
-	\ coc#refresh()
 inoremap <expr><S-Tab> pumvisible() ? "<C-p>" : "<C-h>"
-
-function! s:check_back_space() abort
-	let col = col('.') - 1
-	return !col || getline('.')[col - 1] =~# '\s'
-endfunction
 
 " Toggle (open/close) tree
 nnoremap <leader>e :NvimTreeToggle<CR>
