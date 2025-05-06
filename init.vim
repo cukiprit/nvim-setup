@@ -46,6 +46,7 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'moll/vim-bbye'
+Plug 'ayu-theme/ayu-vim'
 
 " === Language & Snippet Support ===
 Plug 'yuezk/vim-js'
@@ -55,6 +56,11 @@ Plug 'dsznajder/vscode-es7-javascript-react-snippets'
 Plug 'tpope/vim-commentary'
 
 call plug#end()
+
+" Setup ayu theme
+set termguicolors
+let ayucolor="mirage"
+colorscheme ayu
 
 " Nvim-Tree setup
 lua << EOF
