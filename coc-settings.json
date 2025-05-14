@@ -1,10 +1,17 @@
 {
   "coc.preferences.formatOnSave": true,
-	"emmet.includeLanguages": {
-		"javascript": "javascriptreact",
-		"typescript": "typescriptreact"
-	},
-	"snippets.ultisnips.pythonPrompt": false,
-	"emmet.triggerExpansionOnTab": true,
-	"emmet.showAbbreviationSuggestions": true
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  },
+  "snippets.ultisnips.pythonPrompt": false,
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.showAbbreviationSuggestions": true,
+  "go.goplsOptions": {
+    "analyses": {
+      "unusedparams": true,
+      "shadow": true
+    },
+    "staticcheck": true
+  }
 }
