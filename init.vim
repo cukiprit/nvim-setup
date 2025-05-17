@@ -11,7 +11,8 @@ set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
 set foldlevel=99
 
-let $CONFIG_PATH = stdpath('config') . './config'
+" let $CONFIG_PATH = stdpath('config') . './config'
+let $CONFIG_PATH = expand('~/.config/nvim/config')
 execute 'source' $CONFIG_PATH . '/plugins.vim'
 execute 'source' $CONFIG_PATH . '/theme.vim'
 execute 'source' $CONFIG_PATH . '/settings.vim'

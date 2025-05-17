@@ -1,10 +1,11 @@
 " this will install vim-plug if not installed
-if empty(glob('C:/Users/Dika/AppData/Local/nvim/autoload/plug.vim'))
-  silent !powershell -Command "iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim | ni $env:LOCALAPPDATA/nvim/autoload/plug.vim -Force"
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs 
+        \ https://raw.githubcontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-call plug#begin('C:/Users/Dika/AppData/Local/nvim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 " === LSP and Completion ===
 Plug 'neoclide/coc.nvim', { 'do': 'npm install --no-package-lock' }
